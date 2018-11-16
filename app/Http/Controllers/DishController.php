@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Dish;
 
-class DishControllerBak extends Controller
+class DishController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:api')->except(['index', 'show']);
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth:api')->except(['index', 'show']);
+//    }
 
     public function index()
     {
@@ -36,7 +36,7 @@ class DishControllerBak extends Controller
         return response()->json($dish, 200);
     }
 
-    public function delete(Dish $dish)
+    public function destroy(Dish $dish)
     {
         try {
             $dish->delete();
